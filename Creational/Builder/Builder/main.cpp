@@ -33,30 +33,30 @@ class HtmlElement {
 };
 
 class HtmlBuilder {
-        public:
-        HtmlElement root;
-        HtmlBuilder(string root_name){
-            root.name = root_name;
-        }
+    public:
+    HtmlElement root;
+    HtmlBuilder(string root_name){
+        root.name = root_name;
+    }
 
-        HtmlBuilder& add_child(string child_name, string child_text){
-            HtmlElement e{child_name,child_text};
-            root.elements.emplace_back(e);
-            return *this;
-        }
+    HtmlBuilder& add_child(string child_name, string child_text){
+        HtmlElement e{child_name,child_text};
+        root.elements.emplace_back(e);
+        return *this;
+    }
 
-        string str() const {
-            return root.str();
-        }
+    string str() const {
+        return root.str();
+    }
 
-        operator HtmlElement() {
-            return root;
-        }
+    operator HtmlElement() {
+        return root;
+    }
 
-        HtmlElement build() {
-            return root;
-        }
-    };
+    HtmlElement build() {
+        return root;
+    }
+};
 
 
 
